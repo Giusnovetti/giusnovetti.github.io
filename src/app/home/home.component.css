@@ -1,0 +1,82 @@
+.typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    
+    animation: typing 2s steps(40, end), blink-caret 0.5s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure the container takes up the full height of the viewport */
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .cards-container {
+    display: none;
+    opacity: 0;
+    animation: fadeIn 1s 5s forwards;
+  }
+  
+  .cards-container.show {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    opacity: 1;
+  }
+  
+  .card {
+    width: 250px;
+    height: 250px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 0 5px; /* Adjust spacing between cards */
+    background-color: #f0f0f0; /* Example background color */
+    opacity: 0; /* Initially hide the cards */
+    transform: translateY(50px); /* Move the cards downwards */
+    animation: fadeInAnimation 1s ease-in forwards; /* Apply fade-in animation */
+  }
+  
+  .card:nth-child(2) {
+    animation-delay: 0.2s; /* Delay for the second card */
+  }
+  
+  .card:nth-child(3) {
+    animation-delay: 0.4s; /* Delay for the third card */
+  }
+  
+  @keyframes fadeInAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(50px); /* Start the animation from 50px below */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* End the animation at the original position */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .card {
+      max-width: 100%; /* Adjust width to fit smaller screens */
+      height: auto; /* Allow cards to grow vertically on smaller screens */
+    }
+  }
+.home-container{
+    width: 100%;
+    height:100% ;
+}
